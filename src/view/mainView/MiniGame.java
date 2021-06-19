@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.Point;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.awt.event.MouseAdapter;
@@ -35,6 +36,9 @@ public class MiniGame extends JFrame {
 	
 	private ImageIcon forgotImage = new ImageIcon(Main.class.getResource("../images/search.png"));
 	private ImageIcon forgotEnteredImage = new ImageIcon(Main.class.getResource("../images/searchChanged.png"));
+	
+	//마우스 좌표 지정
+	private Point initialClick;
 	
 	
 	public MiniGame() {
@@ -257,6 +261,40 @@ public class MiniGame extends JFrame {
 		//Background Music
 		Music introBgm = new Music("bgm.mp3", true);
 		introBgm.start();
+		
+		this.addMouseListener(new moveWindows());
+		this.addMouseMotionListener(new moveWindows());
+		
 	}
+	
+	//윈도우 드래그 이동 구현
+	class moveWindows extends MouseAdapter {
 
+		@Override
+		public void mousePressed(MouseEvent e) {
+			initialClick = e.getPoint(); //현재 좌표 저장
+			getComponentAt(initialClick); //저장한 좌표 포함한 컴포넌트를 리턴 받음
+		}
+
+		@Override
+		public void mouseDragged(MouseEvent e) {
+			JFrame jf = (JFrame)e.getSource();
+			
+			int thisX =   jf.getLocation().x; //프레임 x값을 저장함
+			int thisY =  jf.getLocation().y ; //프레임 y값을 저장함
+			System.out.println(thisX);
+			System.out.println(thisY);
+		
+			//현재 마우스 위치 좌표 - 첫 마우스 클릭 위치 좌표
+			int xMoved = e.getX() - initialClick.x;
+			
+			int yMoved = e.getY() - initialClick.y;
+			
+			int X = thisX + xMoved; //프레임 x값 + 이동한 x값
+			int Y = thisY + yMoved; //프레임 y값 + 이동한 y값
+			
+			jf.setLocation(X, Y);
+			
+		}
+	}
 }
