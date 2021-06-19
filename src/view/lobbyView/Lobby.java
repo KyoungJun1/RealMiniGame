@@ -14,6 +14,8 @@ import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+import view.lobbyView.*;
+
 public class Lobby extends JFrame{
 	// -----------------기본 설정 --------------------
 	private JPanel panel, inputChat;
@@ -60,7 +62,7 @@ public class Lobby extends JFrame{
 	
 	//메인                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 	public void LobbyMain() {
-			
+			add(panel);
 //---------------메인 프레임 패널설정----------------------// 
 			setTitle("로비");
 			setUndecorated(true);
