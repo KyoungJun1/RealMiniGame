@@ -1,4 +1,4 @@
-package ProjectTeam.menubar;
+package view.menuView;
 
 public class Main {
 

@@ -1,4 +1,4 @@
-package ProjectTeam.menubar;
+package view.menuView;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -6,27 +6,27 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
-import ProjectTeam.menubar.Dialog.five;
-import ProjectTeam.menubar.Dialog.four;
-import ProjectTeam.menubar.Dialog.one;
-import ProjectTeam.menubar.Dialog.three;
-import ProjectTeam.menubar.Dialog.two;
+import view.menuView.Dialog.five;
+import view.menuView.Dialog.four;
+import view.menuView.Dialog.one;
+import view.menuView.Dialog.three;
+import view.menuView.Dialog.two;
 
 public class UI extends JFrame {
 	
 	MusicStart ms = new MusicStart();
 	//
 	////버튼 사진////////////////////////////////////
-	private ImageIcon btImage1 = new ImageIcon(Main.class.getResource("../image/a.png"));
-	private ImageIcon btImage2 = new ImageIcon(Main.class.getResource("../image/b.png"));
-	private ImageIcon btImage3 = new ImageIcon(Main.class.getResource("../image/c.png"));
-	private ImageIcon btImage4 = new ImageIcon(Main.class.getResource("../image/d.png"));
-	private ImageIcon btImage5 = new ImageIcon(Main.class.getResource("../image/f.png"));
-	private ImageIcon btImage6 = new ImageIcon(Main.class.getResource("../image/r.png"));
-	private ImageIcon btImage7 = new ImageIcon(Main.class.getResource("../image/w.png"));
-	private ImageIcon btImage8 = new ImageIcon(Main.class.getResource("../image/t.png"));
-	private ImageIcon btImage9 = new ImageIcon(Main.class.getResource("../image/q.png"));
-	private ImageIcon btImage10 = new ImageIcon(Main.class.getResource("../image/e.png"));
+	private ImageIcon btImage1 = new ImageIcon(Main.class.getResource("../images/a.png"));
+	private ImageIcon btImage2 = new ImageIcon(Main.class.getResource("../images/b.png"));
+	private ImageIcon btImage3 = new ImageIcon(Main.class.getResource("../images/c.png"));
+	private ImageIcon btImage4 = new ImageIcon(Main.class.getResource("../images/d.png"));
+	private ImageIcon btImage5 = new ImageIcon(Main.class.getResource("../images/f.png"));
+	private ImageIcon btImage6 = new ImageIcon(Main.class.getResource("../images/r.png"));
+	private ImageIcon btImage7 = new ImageIcon(Main.class.getResource("../images/w.png"));
+	private ImageIcon btImage8 = new ImageIcon(Main.class.getResource("../images/t.png"));
+	private ImageIcon btImage9 = new ImageIcon(Main.class.getResource("../images/q.png"));
+	private ImageIcon btImage10 = new ImageIcon(Main.class.getResource("../images/e.png"));
 	
 	
 	
