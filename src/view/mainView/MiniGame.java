@@ -16,6 +16,8 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+import view.lobbyView.Lobby;
+
 public class MiniGame extends JFrame {
 	//배경 이미지
 	private Image background = new ImageIcon(Main.class.getResource("../images/mainBackground.jpg")).getImage();
@@ -204,6 +206,7 @@ public class MiniGame extends JFrame {
 
 			@Override
 			public void mousePressed(MouseEvent e) {
+				new Lobby();
 				//로그인 정보 검증,
 				//로그인 성공 후 페이지로 전환
 			}

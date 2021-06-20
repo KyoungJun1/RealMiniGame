@@ -1,4 +1,4 @@
-package ProjectTeam.menubar;
+package view.menuView;
 
 import java.io.BufferedInputStream;
 import java.io.File;
