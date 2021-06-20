@@ -27,7 +27,7 @@ public class Lobby extends JFrame implements ActionListener{
 	private JScrollPane roomScroll, chatScroll, userScroll, rankScroll;
 	
 	// -----------------이미지 설정 --------------------	
-	private Image background = new ImageIcon(Main.class.getResource("../images/mainBackground.jpg")).getImage();
+	private Image background = new ImageIcon(Main.class.getResource("../images/mujiBackground.png")).getImage();
 	private Image introBackground; //배경이미지
 	private Graphics screenGraphic;
 	
@@ -49,7 +49,7 @@ public class Lobby extends JFrame implements ActionListener{
 	//메인                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 	public void LobbyMain() {
 			
-			//frame = new JFrame();
+			frame = new JFrame();
 			
 //---------------메인 프레임 패널설정----------------------// 
 			
@@ -101,23 +101,26 @@ public class Lobby extends JFrame implements ActionListener{
 		
 			
 //--------------방 리스트----------------------
-			// JTable roomList, userList, ranking;
+			
 			roomList = new JTable();
 			roomScroll = new JScrollPane(roomList);
-			//roomList.setBounds(50, 50, 900, 200); // 방 리스트
-			roomScroll.setPreferredSize(new Dimension(900,200));
 			roomScroll.setLocation(50, 200);
+			roomScroll.setSize(900,200);
+			
 			
 //------------유저리스트, 랭킹리스트--------------
-			userList = new JTable();
-			ranking = new JTable();
 			
+			userList = new JTable();
 			userScroll = new JScrollPane(userList);
-			rankScroll = new JScrollPane(ranking);
-			userScroll.setBounds(1050, 210, 150, 200); // 유저접속리스트 
-			rankScroll.setBounds(1050, 470, 150, 200); // 유저랭킹
-			//userScroll.setPreferredSize(new Dimension(1000,100));
-			//userList.setBounds(1050,210,150,200);
+			userScroll.setLocation(950,200);
+			userScroll.setSize(300,200);
+			
+			ranking = new JTable();
+			rankScroll = new JScrollPane(ranking); 
+			rankScroll.setLocation(950,500);
+			rankScroll.setSize(300,200);
+			
+			
 			
 //--------------채팅창-------------------//
 			
@@ -131,19 +134,12 @@ public class Lobby extends JFrame implements ActionListener{
 			input.addActionListener(this);
 			input.setBounds(90, 550, 900, 100);
 			
-			/*
-			chatScroll = new JScrollPane(chat);
-			inputChat = new JPanel();
-			inputChat.add(input);
-			inputChat.setVisible(true);
-			
-			chatScroll.setBounds	(90, 470, 900, 200); // 채팅창 
-			inputChat.setBounds		(90, 470, 900, 200); // 인풋 
-			*/
 			
 //--------------패널 붙이기 ---------------//
 			
 			panel = new JPanel();
+			panel.setLayout(null);
+			panel.setVisible(true);
 			
 			//panel.add(createGame);
 			//panel.add(shop);
@@ -151,9 +147,13 @@ public class Lobby extends JFrame implements ActionListener{
 			//panel.add(relationship);
 			panel.add(roomScroll);
 			//panel.add(chatScroll);
-			//panel.add(userScroll);
-			//panel.add(rankScroll);
+			panel.add(userScroll);
+			panel.add(rankScroll);
 			//panel.add(input);
+			panel.add(falseBar);
+			panel.add(gearBar);
+			
+			
 			
 			add(panel);
 			setVisible(true);
