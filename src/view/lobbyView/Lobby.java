@@ -1,6 +1,5 @@
 package view.lobbyView;
 
-import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
@@ -11,7 +10,6 @@ import java.awt.event.MouseEvent;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -19,6 +17,10 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import view.mainView.Setting;
+import view.menuView.Dialog.four;
+import view.menuView.Dialog.one;
+import view.menuView.Dialog.three;
+import view.menuView.Dialog.two;
 
 public class Lobby extends JFrame implements ActionListener{
 	// -----------------기본 설정 --------------------
@@ -88,6 +90,15 @@ public class Lobby extends JFrame implements ActionListener{
 			createGame.setBorderPainted(false);
 			createGame.setContentAreaFilled(false);
 			createGame.setFocusPainted(false);
+			createGame.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent arg0) {
+					new one();
+
+				}
+				
+			});
 			
 			//상점버튼 
 			shop = new JButton(shopImg);
@@ -96,6 +107,15 @@ public class Lobby extends JFrame implements ActionListener{
 			shop.setBorderPainted(false);
 			shop.setContentAreaFilled(false);
 			shop.setFocusPainted(false);
+			shop.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent arg0) {
+					new two();
+
+				}
+				
+			});
 			
 			//마이페이지버튼 
 			myPage = new JButton(myPageImg);
@@ -104,6 +124,15 @@ public class Lobby extends JFrame implements ActionListener{
 			myPage.setBorderPainted(false);
 			myPage.setContentAreaFilled(false);
 			myPage.setFocusPainted(false);
+			myPage.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent arg0) {
+					new three();
+
+				}
+				
+			});
 			
 			//친구추가버튼 
 			relationship = new JButton(reImg);
@@ -112,6 +141,15 @@ public class Lobby extends JFrame implements ActionListener{
 			relationship.setBorderPainted(false);
 			relationship.setContentAreaFilled(false);
 			relationship.setFocusPainted(false);
+			createGame.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent arg0) {
+					new four();
+
+				}
+				
+			});
 			
 			
 			
