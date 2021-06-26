@@ -6,6 +6,8 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
+import java.util.ConcurrentModificationException;
+import java.util.List;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -15,6 +17,8 @@ import javax.swing.JPanel;
 
 public class Game extends JFrame {
 	//기본 
+	private int x1, x2, y1, y2, z1, z2;
+	private List<PaintDTO> list;
 	private JFrame frame;
 	private JPanel panel, userPan1, userPan2, userPan3, userPan4;
 	private JButton blackBtn, redBtn, greenBtn, blueBtn, yellowBtn, eraserBtn, clearBtn;
@@ -65,10 +69,34 @@ public class Game extends JFrame {
 					bufferImg = canvas.createImage(d.width, d.height);
 					bufferG = (Graphics2D) bufferImg.getGraphics();
 				}
+			
+			try {
+					if(list == null)
+						return;
+					
+					for(PaintDTO dto : list) {
+						int color = dto.getColor();
+						if(color == 0) {bufferG.setColor(Color.black);}
+						if(color == 1) {bufferG.setColor(Color.red);}
+						if(color == 2) {bufferG.setColor(Color.green);}
+						if(color == 3) {bufferG.setColor(Color.blue);}
+						if(color == 4) {bufferG.setColor(Color.yellow);}
+						if(color == 5) {bufferG.setColor(cavas.getBackround());}
+						
+						int stroke = dto.getStroke();
+						bufferG.setStroke(new BasicStroke(stroke));
+						
+						x1 = dto.getX1();
+						y1 = dto.getY1();
+						x2 = dto.getX2();
+						y2 = dto.getY2();
+						bufferG.drawLine(x1, y1, x2, y2);
+					}
+			
+			}catch(ConcurrentModificationException e) {
+				
+			}paint(g);
 			}
-			
-			
-			
 		};
 		canvas.setBackground(Color.white);
 		
