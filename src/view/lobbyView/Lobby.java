@@ -24,7 +24,7 @@ public class Lobby extends JFrame implements ActionListener{
 	// -----------------기본 설정 --------------------
 	private JPanel panel, inputChat;
 	private JFrame frame;
-	private JButton createGame, shop, myPage, relationship, gear, exit;
+	private JButton createGame, shop, myPage, relationship, gear, exit, mailBtn;
 	private JTextField input;
 	private JTextArea chat;
 	private JTable roomList, userList, ranking;
@@ -41,10 +41,11 @@ public class Lobby extends JFrame implements ActionListener{
 	private ImageIcon gearBackImg = new ImageIcon(Main.class.getResource("../images/gearChanged.png"));
 
 	// -------------------------버튼, 아이콘등 이미지 ----------------------
-	private ImageIcon createImg = new ImageIcon(Main.class.getResource("../images/createBtn.png"));
+	private ImageIcon createImg = new ImageIcon(Main.class.getResource("../images/createB.png"));
 	private ImageIcon shopImg = new ImageIcon(Main.class.getResource("../images/shopImg.png"));
-	private ImageIcon myPageImg = new ImageIcon(Main.class.getResource("../images/mypageImg.png"));
-	private ImageIcon reImg = new ImageIcon(Main.class.getResource("../images/reImg.png"));
+	private ImageIcon myPageImg = new ImageIcon(Main.class.getResource("../images/mypageB.png"));
+	private ImageIcon reImg = new ImageIcon(Main.class.getResource("../images/plusB.png"));
+	private ImageIcon mailImg = new ImageIcon(Main.class.getResource("../images/mailBtn.png"));
 	
 	
 	//기본생성자 
@@ -84,7 +85,7 @@ public class Lobby extends JFrame implements ActionListener{
 			//게임생성버튼 
 			createGame = new JButton(createImg);
 			createGame.setLayout(null);
-			createGame.setBounds(90, 50, 200, 100); 
+			createGame.setBounds(50, 50, 150, 100); 
 			createGame.setBorderPainted(false);
 			createGame.setContentAreaFilled(false);
 			createGame.setFocusPainted(false);
@@ -92,7 +93,7 @@ public class Lobby extends JFrame implements ActionListener{
 			//상점버튼 
 			shop = new JButton(shopImg);
 			shop.setLayout(null);
-			shop.setBounds(340, 50, 200, 100);  
+			shop.setBounds(250, 50, 150, 100);  
 			shop.setBorderPainted(false);
 			shop.setContentAreaFilled(false);
 			shop.setFocusPainted(false);
@@ -100,7 +101,7 @@ public class Lobby extends JFrame implements ActionListener{
 			//마이페이지버튼 
 			myPage = new JButton(myPageImg);
 			myPage.setLayout(null);
-			myPage.setBounds(590, 50, 200, 100);
+			myPage.setBounds(450, 50, 150, 100);
 			myPage.setBorderPainted(false);
 			myPage.setContentAreaFilled(false);
 			myPage.setFocusPainted(false);
@@ -108,12 +109,18 @@ public class Lobby extends JFrame implements ActionListener{
 			//친구추가버튼 
 			relationship = new JButton(reImg);
 			relationship.setLayout(null);
-			relationship.setBounds(840, 50, 200, 100); 
+			relationship.setBounds(650, 50, 150, 100); 
 			relationship.setBorderPainted(false);
 			relationship.setContentAreaFilled(false);
 			relationship.setFocusPainted(false);
 			
-			
+			//메일함  
+			mailBtn = new JButton(mailImg);
+			mailBtn.setLayout(null);
+			mailBtn.setBounds(850, 50, 150, 100); 
+			mailBtn.setBorderPainted(false);
+			mailBtn.setContentAreaFilled(false);
+			mailBtn.setFocusPainted(false);
 			
 //-----------------설정, 취소(뒤로가기)버튼---------------
 			
@@ -177,6 +184,7 @@ public class Lobby extends JFrame implements ActionListener{
 			panel.add(shop);
 			panel.add(myPage);
 			panel.add(relationship);
+			panel.add(mailBtn);
 			panel.add(roomScroll);
 			panel.add(chatScroll);
 			panel.add(userScroll);
