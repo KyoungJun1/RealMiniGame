@@ -114,14 +114,16 @@ class Main extends JFrame {
 		JPanel card3 = new JPanel();
 		JPanel card4 = new JPanel();
 		JPanel card5 = new JPanel();
+		JPanel card6 = new JPanel();
 
 		card1.setBackground(Color.lightGray);
 		card2.setBackground(Color.lightGray);
 		card3.setBackground(Color.lightGray);
 		card4.setBackground(Color.lightGray);
 		card5.setBackground(Color.lightGray);
+		card6.setBackground(Color.lightGray);
 
-		// String[] word = {"APPLE", "BANNA", "CAT", "DOG"};
+		// String[] word = {"APPLE", "BANANA", "CAT", "DOG"};
 
 		Font wordFont = new Font("", Font.BOLD, 40);
 		JLabel wordLabel1 = new JLabel("APPLE");
@@ -129,7 +131,7 @@ class Main extends JFrame {
 		wordLabel1.setBounds(getBounds());
 		card1.add(wordLabel1);
 
-		JLabel wordLabel2 = new JLabel("BANNA");
+		JLabel wordLabel2 = new JLabel("BANANA");
 		wordLabel2.setFont(wordFont);
 		wordLabel2.setBounds(getBounds());
 		card2.add(wordLabel2);
@@ -143,11 +145,16 @@ class Main extends JFrame {
 		wordLabel4.setFont(wordFont);
 		wordLabel4.setBounds(getBounds());
 		card4.add(wordLabel4);
+		
+		JLabel wordLabel5 = new JLabel("ELEPHANT");
+		wordLabel5.setFont(wordFont);
+		wordLabel5.setBounds(getBounds());
+		card5.add(wordLabel5);
 
 		JLabel wordLabelFin = new JLabel("ALL CLEAR");
 		wordLabelFin.setFont(wordFont);
 		wordLabelFin.setBounds(getBounds());
-		card5.add(wordLabelFin);
+		card6.add(wordLabelFin);
 
 		// 프레임(컨테이너) 패널 추가
 		wordPanel.add(card1);
@@ -155,6 +162,7 @@ class Main extends JFrame {
 		wordPanel.add(card3);
 		wordPanel.add(card4);
 		wordPanel.add(card5);
+		wordPanel.add(card6);
 
 
 		input = new JTextField();
@@ -275,6 +283,12 @@ class Main extends JFrame {
 					cnt.setText("30");
 				}
 				if (input.getText().equals(wordLabel4.getText())) {
+//					System.out.println("성공");
+					card.next(card1.getParent());
+					input.setText("");
+					cnt.setText("30");
+				}
+				if (input.getText().equals(wordLabel5.getText())) {
 //					System.out.println("성공");
 					card.next(card1.getParent());
 					input.setText("");
