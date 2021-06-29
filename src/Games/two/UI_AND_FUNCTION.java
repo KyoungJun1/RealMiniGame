@@ -3,7 +3,6 @@ package Games.two;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
-import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -44,9 +43,6 @@ public class UI_AND_FUNCTION extends JFrame {
 	int num = 0;
 	Dialog dia;
 
-	// 이미지 선언
-	Image img = new ImageIcon("Games/two/1.png").getImage();
-
 	public UI_AND_FUNCTION() {
 
 		JFrame_Start(); // 컨테이너 출
@@ -64,6 +60,7 @@ public class UI_AND_FUNCTION extends JFrame {
 		frame.add(JPanel_Main());
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		JLabel kk = new JLabel();
 
 	}
 
@@ -75,6 +72,8 @@ public class UI_AND_FUNCTION extends JFrame {
 		panel.setSize(1280, 720);
 		panel.setLayout(null);
 		panel.add(JPanel_Game());
+
+		// 이미지 삽입
 
 		// 가로 세로 설명
 		JLabel label1 = new JLabel("  가로문제<순서대로 1,2,3> ");
@@ -200,6 +199,10 @@ public class UI_AND_FUNCTION extends JFrame {
 					text[12].setText("");
 					text[13].setText("");
 					text[14].setText("");
+					text[11].setEnabled(true);
+					text[12].setEnabled(true);
+					text[13].setEnabled(true);
+					text[14].setEnabled(true);
 
 				}
 
@@ -226,6 +229,8 @@ public class UI_AND_FUNCTION extends JFrame {
 				} else {
 					text[15].setText("");
 					text[16].setText("");
+					text[15].setEnabled(true);
+					text[16].setEnabled(true);
 
 				}
 
@@ -252,6 +257,8 @@ public class UI_AND_FUNCTION extends JFrame {
 				} else {
 					text[21].setText("");
 					text[22].setText("");
+					text[21].setEnabled(true);
+					text[22].setEnabled(true);
 
 				}
 
@@ -282,6 +289,9 @@ public class UI_AND_FUNCTION extends JFrame {
 					text[4].setText("");
 					text[9].setText("");
 					text[14].setText("");
+					text[4].setEnabled(true);
+					text[9].setEnabled(true);
+					text[14].setEnabled(true);
 
 				}
 
@@ -312,6 +322,10 @@ public class UI_AND_FUNCTION extends JFrame {
 					text[11].setText("");
 					text[21].setText("");
 					text[16].setText("");
+					text[11].setEnabled(true);
+					text[21].setEnabled(true);
+					text[16].setEnabled(true);
+
 				}
 
 			}
@@ -337,6 +351,8 @@ public class UI_AND_FUNCTION extends JFrame {
 				} else {
 					text[13].setText("");
 					text[18].setText("");
+					text[13].setEnabled(true);
+					text[118].setEnabled(true);
 
 				}
 
@@ -406,6 +422,7 @@ public class UI_AND_FUNCTION extends JFrame {
 		for (int i = 0; i < text.length; i++) {
 			text[i] = new JTextField(SwingConstants.CENTER);
 			text[i].setSize(100, 100);
+			text[i].setBorder(border);
 			text[i].setFont(font);
 			text[i].setBackground(Color.CYAN);
 			panel_Game.add(text[i]);
